@@ -1,0 +1,73 @@
+.articlecardone{
+  width: 100%;
+  height: 500px;
+  background-color: red;
+  position: relative;
+}
+.articlecardoneimg{
+    width: 100%;
+    height: 100%;
+
+}
+.articlecardonebody{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(10deg,rgb(0, 0, 0,0.5),rgb(255, 255, 255,0.5));
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+}
+.articleonecontent{
+    width: 100%;
+    /* height:500px; */
+    /* background-color: pink; */
+   padding:5% 5%;
+
+}
+.articleonechannel{
+    background-color: black;
+    display: inline-block;
+    color: white;
+    font-size: 20px;padding: 5px;
+}
+.articleoneheading{
+    font-size: 27px;
+    color: white;
+    padding-right: 10%;
+    /* text-align: left; */
+}
+.authorname{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+.date{
+    font-size: 18px;
+    color: white;
+     
+}
+/* ---------------card tow--------------- */
+
+.articlecardtwo{
+    width: 100%;
+    height: 250px;
+     position: relative;
+
+}
+.articletwoheading{
+    font-size: 23px;
+}
+
+/* ---------card three---------- */
+
+.articlecardthree{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.articlethreeheading{
+    font-size: 20px;
+}
