@@ -7,6 +7,13 @@ import './ArticleCard.css'
 // { articleimg,articlename,aritcledate,articleauthor,articletitle}
 
 export default function ArticleCard({articleimg,description,author,date,channel,url}) {
+  const breakString = (str, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < chunkSize; i++) {
+        result.push(str[i])
+    }
+    return result.join("")
+}
   return (
    <a href={url}> <div className='articlecardone'>
    <img src={articleimg} className='articlecardoneimg'/>
@@ -14,7 +21,7 @@ export default function ArticleCard({articleimg,description,author,date,channel,
      <div className='articleonecontent'>
        <div className='articleonechannel'>{channel}</div>
        <div className='articleoneheading'> 
-       {description}
+         {breakString(description, 65 )}{'...'}
        </div>
      <div><span className='authorname'>{author}-</span><span className='date'>{date}</span></div>
      </div>
@@ -25,6 +32,13 @@ export default function ArticleCard({articleimg,description,author,date,channel,
 }
 
 export function AriticleCardTow({title,channel,articleimg,url}){
+  const breakString = (str, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < chunkSize; i++) {
+        result.push(str[i])
+    }
+    return result.join("")
+}
   return(
    <a href={url}>
      <div className='articlecardtwo'>
@@ -32,7 +46,7 @@ export function AriticleCardTow({title,channel,articleimg,url}){
       <div className='articlecardonebody'>
         <div className='articleonecontent'>
           <div className='articleonechannel'>{channel}</div>
-          <div className='articleoneheading articletwoheading'>  {title}
+          <div className='articleoneheading articletwoheading'>    {breakString(title, 60 )}{'...'}
           </div>
           
         </div>
@@ -45,14 +59,21 @@ export function AriticleCardTow({title,channel,articleimg,url}){
 
 
 export function ArticleCardthree({articleimg,title,channel,url}){
+  const breakString = (str, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < chunkSize; i++) {
+        result.push(str[i])
+    }
+    return result.join("")
+}
   return(
   <a href={url}>
       <div className='articlecardthree'>
- <img src={articleimg} className='articlecardoneimg'/>
+      <img src={articleimg} className='articlecardoneimg'/>
       <div className='articlecardonebody'>
         <div className='articleonecontent'>
           <div className='articleonechannel'>{channel}</div>
-          <div className='articleoneheading articlethreeheading'> {title}
+          <div className='articleoneheading articlethreeheading'> {breakString(title, 40 )}{'...'}
           </div>
           
         </div>

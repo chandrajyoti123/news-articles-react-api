@@ -12,7 +12,7 @@ body{
  
     margin: 30px 0;
 background-color: white;
-box-shadow: 0 0 10px 0.2px rgb(108, 96, 96);
+/* box-shadow: 0 0 10px 0.2px rgb(108, 96, 96); */
 border-radius: 10px;
 }
 .maincardanchor{

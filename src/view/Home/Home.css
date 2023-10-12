@@ -3,6 +3,63 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.navbar{
+  max-width: 100vw;
+  height: 80px;
+  background-color: blue;
+  display: flex;
+}
+
+.navbarlogo{
+  width: 10%;
+  /* background-color: yellow; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.logo{
+  font-size: 35px;
+  font-style: italic;
+  color: white;
+  font-weight: bold;
+}
+.logono{
+  color: orangered;
+}
+.navlinks{
+  width: 55%;
+  height: 100%;
+
+
+}
+.navlinks ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color:  white;
+}
+.navlinks ul li{
+  list-style: none;
+  font-size: 25px;
+
+  cursor: pointer;
+}
+.setactive{
+  color: orangered;
+}
+.search-bar{
+  width: 35%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .inpute-field{
   width: 400px;
   height: 50px;
@@ -21,7 +78,17 @@
   height: auto;
   margin: 10px 10%;
 }
+.headingcontainer{
+  width: 100%;
 
+  padding-left: 10%;
+}
+.heading{
+  font-size: 60px;
+  color: black;
+  font-weight: bold;
+  padding: 40px 0 5px 0;
+}
 .sectionone{
   width: 100%;
   height: 500px;
@@ -120,4 +187,15 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+/* -----------footer----------- */
+
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: blue;
+  font-size: 30px;
+  font-weight: bold;
+  color:  white;
 }
