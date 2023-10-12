@@ -12,11 +12,12 @@ import MainCard from '../../components/MainCard/MainCard'
 export default function Home() {
   const [news, setNews] = useState([])
   console.log(news)
+  const [searchvalue,setSearchvalue]=useState("bollywood")
 
 
   const loadNews = async () => {
     try {
-      const response = await axios.get("https://newsapi.org/v2/everything?q=india&from=2023-10-08&to=2023-10-08&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3")
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=${searchvalue}&from=2023-10-08&to=2023-10-08&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
       setNews(response.data.articles)
     } catch (err) {
       console.log(err)
@@ -41,6 +42,12 @@ export default function Home() {
   
 
     <>
+    <div>
+      <input type='text' placeholder='search your topic' value={searchvalue} onChange={(e)=>{
+          setSearchvalue(e.target.value)
+      }}
+      className='inpute-field' />
+    </div>
       <div className='main-container' >
 
         <div className='sectionone'>
