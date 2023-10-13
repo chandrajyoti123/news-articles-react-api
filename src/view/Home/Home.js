@@ -14,7 +14,7 @@ export default function Home() {
 
   const [searchvalue, setSearchvalue] = useState("")
 
-  const [topicname, setTopicname] = useState("pune")
+  const [topicname, setTopicname] = useState("japan")
   console.log(topicname)
 
 
@@ -28,6 +28,7 @@ export default function Home() {
     if (key === "Enter") {
       setTopicname(searchvalue)
     }
+    setSearchvalue('')
 
   }, [key])
 
@@ -63,20 +64,20 @@ export default function Home() {
         </div>
         <div className='navlinks'>
           <ul>
-            <li className={topicname == "india" ? "setactive" : ""} onClick={() => {
-              funcToTopic("india")
+            <li className={topicname == "India" ? "setactive" : ""} onClick={() => {
+              funcToTopic("India")
             }}>Home</li>
-            <li className={topicname == "education" ? "setactive" : ""} onClick={() => {
-              funcToTopic("education")
-            }}>education</li>
-            <li className={topicname == "sports" ? "setactive" : ""} onClick={() => {
-              funcToTopic("sports")
-            }}>sports</li>
-            <li className={topicname == "bollywood" ? "setactive" : ""} onClick={() => {
-              funcToTopic("bollywood")
-            }}>bollywood</li>
-            <li className={topicname == "technology" ? "setactive" : ""} onClick={() => {
-              funcToTopic("technology")
+            <li className={topicname == "Education" ? "setactive" : ""} onClick={() => {
+              funcToTopic("Education")
+            }}>Education</li>
+            <li className={topicname == "Sports" ? "setactive" : ""} onClick={() => {
+              funcToTopic("Sports")
+            }}>Sports</li>
+            <li className={topicname == "Bollywood" ? "setactive" : ""} onClick={() => {
+              funcToTopic("Bollywood")
+            }}>Bollywood</li>
+            <li className={topicname == "Technology" ? "setactive" : ""} onClick={() => {
+              funcToTopic("Technology")
             }}>Technology</li>
           </ul>
         </div>
@@ -93,13 +94,12 @@ export default function Home() {
       </div>
 
       <div className='headingcontainer'>
-        <div className='heading'>{topicname=="india"?"":topicname}</div>
+        <div className='heading'>{topicname=="India"?"":topicname}</div>
       </div>
-      <div className='main-container' >
-        <div className='sectionone'>
-          <div className='cardone'>
-            <div className='crad1'>
-              {
+    
+      <div className='sectione'>
+        <div className='sectionechild1'>
+        {
                 news.map((ele, i) => {
                   if (i == 0) {
                     return <ArticleCard articleimg={ele?.urlToImage} description={ele?.title} author={ele?.author} date={ele?.publishedAt} channel={ele?.source?.name} url={ele?.url} />
@@ -108,24 +108,38 @@ export default function Home() {
                 })
 
               }
-            </div>
-          </div>
-          <div className='remaincard'>
-            <div className='remaincardone'>
-              <div className='card2'>
-                {
+
+        </div>
+        <div className='sectionechild2'>
+          <div className='child1'>
+          {
                   news.map((ele, i) => {
                     if (i == 1) {
                       return <AriticleCardTow channel={ele?.source?.name} title={ele?.title} articleimg={ele?.urlToImage} url={ele?.url} />
                     }
                   })
                 }
-              </div>
-            </div>
-            <div className='remaincardanother'>
-              {
+
+          </div>
+          <div className='child2'>
+            <div className='child2child1'>
+            {
                 news.map((ele, i) => {
-                  // i > 1 && i < 4
+                  
+                  if (i==2) {
+
+                    return <ArticleCardthree articleimg={ele?.urlToImage} title={ele?.title} channel={ele?.source?.name} url={ele?.url} />
+                  }
+
+                })
+
+              }
+
+            </div>
+            <div className='child2child2'>
+            {
+                news.map((ele, i) => {
+                  
                   if (i==3) {
 
                     return <ArticleCardthree articleimg={ele?.urlToImage} title={ele?.title} channel={ele?.source?.name} url={ele?.url} />
@@ -136,13 +150,15 @@ export default function Home() {
               }
 
             </div>
+
           </div>
 
         </div>
 
-
       </div>
-
+      <div className='subheading'>
+       Top Headline
+      </div>
       <div className='sectiontwo'>
         <div className='sectiontwoletf'>
           <FontAwesomeIcon className='angleicon' icon={faAngleLeft} onClick={() => {
@@ -170,6 +186,9 @@ export default function Home() {
         </div>
       </div>
       {/* -------------section 3-------------- */}
+      <div className='subheading'>
+        Recent News
+      </div>
 
       <div className='sectionthree'>
         {

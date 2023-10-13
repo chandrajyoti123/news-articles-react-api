@@ -1,6 +1,6 @@
 .articlecardone{
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-color: red;
   position: relative;
 }
@@ -28,7 +28,7 @@
 
 }
 .articleonechannel{
-    background-color: black;
+    background-color: rgb(13, 13, 13);
     display: inline-block;
     color: white;
     font-size: 20px;padding: 5px;
@@ -37,7 +37,10 @@
     font-size: 27px;
     color: white;
     padding-right: 10%;
-    /* text-align: left; */
+   
+}
+.authorcontainer{
+    margin-top: 10px;
 }
 .authorname{
     font-size: 18px;
@@ -53,9 +56,12 @@
 
 .articlecardtwo{
     width: 100%;
-    height: 250px;
+    height: 100%;
      position: relative;
 
+}
+.channel1{
+    font-size: 17px;
 }
 .articletwoheading{
     font-size: 23px;
@@ -67,6 +73,9 @@
     width:100%;
     height: 100%;
     position: relative;
+}
+.channel2{
+    font-size: 15px;
 }
 .articlethreeheading{
     font-size: 20px;
