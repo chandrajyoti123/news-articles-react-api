@@ -5,7 +5,6 @@ import ArticleCard from '../../components/ArticleCard/ArticleCard'
 import { AriticleCardTow } from '../../components/ArticleCard/ArticleCard'
 import { ArticleCardthree } from '../../components/ArticleCard/ArticleCard'
 import SmallCard from '../../components/SmallCard/SmallCard'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainCard from '../../components/MainCard/MainCard'
@@ -14,7 +13,7 @@ export default function Home() {
 
   const [searchvalue, setSearchvalue] = useState("")
 
-  const [topicname, setTopicname] = useState("japan")
+  const [topicname, setTopicname] = useState("technology")
   console.log(topicname)
 
 
@@ -28,7 +27,7 @@ export default function Home() {
     if (key === "Enter") {
       setTopicname(searchvalue)
     }
-    setSearchvalue('')
+    // setSearchvalue('')
 
   }, [key])
 

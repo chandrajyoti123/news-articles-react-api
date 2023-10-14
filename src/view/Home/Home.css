@@ -219,7 +219,7 @@ padding-bottom: 5px;
   padding: 20px 0;
   background-color: rgb(21, 21, 21);
   font-size: 25px;
- 
+ margin-top: 30px;
   color:  white;
   text-transform: capitalize;
 }
@@ -278,11 +278,11 @@ padding-bottom: 5px;
     width: 0%;
      background-color: transparent;
     position: absolute;
-    left: 20px;
+    left: 25px;
     z-index: 99;
   }
   .angleicon{
-    font-size: 25px;
+    font-size: 27px;
     color: white;
    }
   .sectiontwomain{
@@ -292,7 +292,7 @@ padding-bottom: 5px;
     width: 0%;
     background-color: transparent;
      position: absolute;
-    right: 20px;
+    right: 21px;
     z-index: 99;
    }
 
