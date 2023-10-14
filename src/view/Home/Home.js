@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainCard from '../../components/MainCard/MainCard'
 export default function Home() {
+  // -----------date function --------
   const monthno=new Date().getMonth()+1
   const yearno=new Date().getFullYear()
   const dateno=new Date().getDate()
@@ -20,8 +21,9 @@ export default function Home() {
 
   const [searchvalue, setSearchvalue] = useState("")
 
-  const [topicname, setTopicname] = useState("bollywood")
-  console.log(topicname)
+  const [topicname, setTopicname] = useState("india")
+  
+
 
 
   const funcToTopic = (topic) => {
@@ -33,22 +35,15 @@ export default function Home() {
   useEffect(() => {
     if (key === "Enter") {
       setTopicname(searchvalue)
+      setSearchvalue("")
     }
     // setSearchvalue('')
 
   }, [key])
-// -----------date function --------
 
-
-
-
-
-
-
-
-  const loadNews = async () => {
+ const loadNews = async () => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}&from=${yearno}-${monthno}-${dateno-2}&to=${yearno}-${monthno}-${dateno}&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}}&from=${yearno}-${monthno}-${dateno-2}&to=${yearno}-${monthno}-${dateno}&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
       setNews(response.data.articles)
     } catch (err) {
       console.log(err)
@@ -57,10 +52,15 @@ export default function Home() {
 
   }
 
+  // useEffect(() => {
+  //   loadNews()
+
+  // }, [])
+
   useEffect(() => {
     loadNews()
 
-  }, [])
+  }, [topicname])
 
   const handleScroll = (event) => {
     const scroll = document.getElementById('flex-scroll');
@@ -77,19 +77,19 @@ export default function Home() {
         <div className='navlinks'>
           <ul>
             <li className={topicname == "india" ? "setactive" : ""} onClick={() => {
-              funcToTopic("India")
+              funcToTopic("india")
             }}>Home  </li>
             <li className={topicname == "education" ? "setactive" : ""} onClick={() => {
-              funcToTopic("Education")
+              funcToTopic("education")
             }}>Education</li>
             <li className={topicname == "sports" ? "setactive" : ""} onClick={() => {
-              funcToTopic("Sports")
+              funcToTopic("sports")
             }}>Sports</li>
-            <li className={topicname == "tollywood" ? "setactive" : ""} onClick={() => {
-              funcToTopic("Bollywood")
+            <li className={topicname == "bollywood" ? "setactive" : ""} onClick={() => {
+              funcToTopic("bollywood")
             }}>Bollywood</li>
             <li className={topicname == "technology" ? "setactive" : ""} onClick={() => {
-              funcToTopic("Technology")
+              funcToTopic("technology")
             }}>Technology</li>
           </ul>
         </div>
@@ -106,7 +106,7 @@ export default function Home() {
       </div>
 
       <div className='headingcontainer'>
-        <div className='heading'>{topicname=="India"?"":topicname}</div>
+        <div className='heading'>{topicname=="india"?"":topicname}</div>
       </div>
     
       <div className='sectione'>
