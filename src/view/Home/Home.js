@@ -9,11 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import MainCard from '../../components/MainCard/MainCard'
 export default function Home() {
+  const monthno=new Date().getMonth()+1
+  const yearno=new Date().getFullYear()
+  const dateno=new Date().getDate()
+    
+  
+ 
+
   const [news, setNews] = useState([])
 
   const [searchvalue, setSearchvalue] = useState("")
 
-  const [topicname, setTopicname] = useState("technology")
+  const [topicname, setTopicname] = useState("bollywood")
   console.log(topicname)
 
 
@@ -30,13 +37,18 @@ export default function Home() {
     // setSearchvalue('')
 
   }, [key])
+// -----------date function --------
+
+
+
+
 
 
 
 
   const loadNews = async () => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}&from=2023-10-11&to=2023-10-11&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}&from=${yearno}-${monthno}-${dateno-2}&to=${yearno}-${monthno}-${dateno}&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
       setNews(response.data.articles)
     } catch (err) {
       console.log(err)
@@ -57,25 +69,26 @@ export default function Home() {
 
   return (
     <>
+   
       <div className='navbar'>
         <div className='navbarlogo'>
           <div className='logo'>News<span className='logono'>18</span></div>
         </div>
         <div className='navlinks'>
           <ul>
-            <li className={topicname == "India" ? "setactive" : ""} onClick={() => {
+            <li className={topicname == "india" ? "setactive" : ""} onClick={() => {
               funcToTopic("India")
-            }}>Home</li>
-            <li className={topicname == "Education" ? "setactive" : ""} onClick={() => {
+            }}>Home  </li>
+            <li className={topicname == "education" ? "setactive" : ""} onClick={() => {
               funcToTopic("Education")
             }}>Education</li>
-            <li className={topicname == "Sports" ? "setactive" : ""} onClick={() => {
+            <li className={topicname == "sports" ? "setactive" : ""} onClick={() => {
               funcToTopic("Sports")
             }}>Sports</li>
-            <li className={topicname == "Bollywood" ? "setactive" : ""} onClick={() => {
+            <li className={topicname == "tollywood" ? "setactive" : ""} onClick={() => {
               funcToTopic("Bollywood")
             }}>Bollywood</li>
-            <li className={topicname == "Technology" ? "setactive" : ""} onClick={() => {
+            <li className={topicname == "technology" ? "setactive" : ""} onClick={() => {
               funcToTopic("Technology")
             }}>Technology</li>
           </ul>
