@@ -33,6 +33,10 @@ export default function Home() {
 
   const [key, setKey] = useState("")
   useEffect(() => {
+   if(searchvalue==""){
+    return;
+   }
+
     if (key === "Enter") {
       setTopicname(searchvalue)
       setSearchvalue("")
@@ -43,7 +47,7 @@ export default function Home() {
 
  const loadNews = async () => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}}&from=${yearno}-${monthno}-${dateno-2}&to=${yearno}-${monthno}-${dateno}&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=${topicname}}&from=${yearno}-${monthno}-${dateno-1}&to=${yearno}-${monthno}-${dateno}&sortBy=popularity&apiKey=b79e11c082af4dd6908c08cfb41549f3`)
       setNews(response.data.articles)
     } catch (err) {
       console.log(err)
@@ -82,9 +86,9 @@ export default function Home() {
             <li className={topicname == "education" ? "setactive" : ""} onClick={() => {
               funcToTopic("education")
             }}>Education</li>
-            <li className={topicname == "sports" ? "setactive" : ""} onClick={() => {
-              funcToTopic("sports")
-            }}>Sports</li>
+            <li className={topicname == "politics" ? "setactive" : ""} onClick={() => {
+              funcToTopic("politics")
+            }}>Politics</li>
             <li className={topicname == "bollywood" ? "setactive" : ""} onClick={() => {
               funcToTopic("bollywood")
             }}>Bollywood</li>
