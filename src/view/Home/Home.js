@@ -37,9 +37,9 @@ export default function Home() {
     return;
    }
 
-    if (key === "Enter") {
+    if (key === "Enter") { 
       setTopicname(searchvalue)
-      setSearchvalue("")
+        setSearchvalue("")
     }
     // setSearchvalue('')
 
